@@ -113,10 +113,16 @@
     <ClCompile Include="Core.cpp" />
     <ClCompile Include="Graph.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Structs.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core.h" />
+    <ClInclude Include="Flags.h" />
+    <ClInclude Include="Functions.h" />
     <ClInclude Include="Graph.h" />
+    <ClInclude Include="List.h" />
+    <ClInclude Include="Structs.h" />
+    <ClInclude Include="Timer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
