@@ -2,7 +2,7 @@
 
 #include "Flags.h"
 #include "List.h"
-#include "Timer.h"
+//#include "Timer.h"
 //#include "Structs.h"
 //#include "Functions.h"
 
@@ -36,26 +36,25 @@ public:
 
 	int dijkstrasAlgorithmListOfSuccessors(int startNode = 0, int endNode = 0);
 
-public: //will be "private" in the future
-	
+	void showIncidenceMatrix();
+
+	void showListOfSuccessors();
+
+	static const void showIncidenceMatrix(int** incidenceMatrix, int numberOfNodes, int numberOfEdges);
+
+	static const void showListOfSuccessors(List<int> ** listOfSuccessors, int numberOfNodes, int numberOfEdges);
+
+private:
 	void createIncidenceMatrix(int numberOfEdges, int numberOfNodes);
 	
 	void resetIncidenceMatrix();
-	
-	void showIncidenceMatrix();
-	
-	static const void showIncidenceMatrix(int** incidenceMatrix, int numberOfNodes, int numberOfEdges);
 
 	void createWeightMatrix(int numberOfEdges);
 	
 	void showWeightMatrix();
 
 	void createListOfSuccessors(int numberOfNodes);
-	
-	void showListOfSuccessors();
-	
-	static const void showListOfSuccessors(List<int> ** listOfSuccessors, int numberOfNodes, int numberOfEdges);
-
+		
 	int getWeight(int first, int second);
 
 private:

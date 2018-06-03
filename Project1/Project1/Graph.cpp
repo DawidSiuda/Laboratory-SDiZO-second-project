@@ -1,6 +1,5 @@
 #include "Graph.h"
 
-
 Graph::Graph(int numberOfNodes, int density, int type)
 {
 	incidenceMatrix	 = nullptr;
@@ -89,7 +88,8 @@ Graph::Graph(int numberOfNodes, int density, int type)
 			std::cout << "Creating edge for nodes " << firstNode << " and " << secondNode << std::endl;
 			#endif //SHOW_LOG_CREATE_GRPH
 
-			int weight = rand() % 15 + 1 ;
+			int weight = (rand() % 15) + 1 ;
+
 
 			addEdge(firstNode, secondNode, numberOfcreatedEdge, weight);
 
@@ -128,7 +128,7 @@ Graph::Graph(int numberOfNodes, int density, int type)
 			std::cout << "Creating edge for nodes " << firstNode << " and " << secondNode << std::endl;
 			#endif //SHOW_LOG_CREATE_GRPH
 
-			int weight = rand() % 15;
+			int weight = (rand() % 15) + 1;
 
 			addEdge(firstNode, secondNode, numberOfcreatedEdge, weight);
 
@@ -194,7 +194,7 @@ Graph::Graph(int numberOfNodes, int density, int type)
 			std::cout << "Creating edge for nodes " << firstNode << " and " << secondNode << std::endl;
 			#endif //SHOW_LOG_CREATE_GRPH
 
-			int weight = rand() % 15 + 1 ;
+			int weight = ((rand() % 15) + 1);
 
 			addEdge(firstNode, secondNode, numberOfcreatedEdge, weight);
 
@@ -233,7 +233,7 @@ Graph::Graph(int numberOfNodes, int density, int type)
 			std::cout << "Creating edge for nodes " << firstNode << " and " << secondNode << std::endl;
 			#endif //SHOW_LOG_CREATE_GRPH
 
-			int weight = rand() % 15;
+			int weight = ((rand() % 15) + 1);
 
 			addEdge(firstNode, secondNode, numberOfcreatedEdge, weight);
 
@@ -1037,7 +1037,7 @@ int Graph::dijkstrasAlgorithmIncydenceMatrix(int startNode, int endNode)
 				if (d[selectetRootNode] > d[tempSelectedNode])
 				{
 					selectetRootNode = tempSelectedNode;
-				}	
+				}
 			}
 		}
 
@@ -1089,7 +1089,7 @@ int Graph::dijkstrasAlgorithmIncydenceMatrix(int startNode, int endNode)
 		{
 			int procesedNode = tempListOfSuccesors.get_value_at(0);
 			
-			tempListOfSuccesors.pop_front();
+			tempListOfSuccesors.pop_at(0);
 
 			int weightOfEdge = getWeight(selectetRootNode, procesedNode);
 
@@ -1115,8 +1115,12 @@ int Graph::dijkstrasAlgorithmIncydenceMatrix(int startNode, int endNode)
 
 				int newWeight = d[selectetRootNode] + weightOfEdge;
 
+				//std::cout << procesedNode <<  " Weight of edge: " << newWeight << std::endl;
+
 				if (d[procesedNode] > newWeight)
 				{
+					
+
 					d[procesedNode] = newWeight;
 
 					p[procesedNode] = selectetRootNode;

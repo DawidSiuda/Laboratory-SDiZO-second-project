@@ -25,7 +25,9 @@ void mainProgram()
 			break;
 		}
 
-		//system("cls");
+		#ifdef CLEAN_SCREEN
+		system("cls");
+		#endif // CLEAN_SCREEN
 	}
 
 	return;
@@ -191,8 +193,6 @@ void dijkstraAlgorithmProgram()
 				system("cls");
 				#endif // CLEAN_SCREEN
 
-				Timer timer;
-
 				int startNode;
 				int endNode;
 				int weigth;
@@ -212,13 +212,7 @@ void dijkstraAlgorithmProgram()
 
 				cin >> endNode;
 
-				timer.start();
-
 				weigth = graph->dijkstrasAlgorithmIncydenceMatrix(startNode, endNode);
-
-				auto time_span = timer.stop();
-
-				message += " Algorytm wykonano w czsie: " + std::to_string(time_span.count()) + "\n\n";;
 				
 				if (weigth != -1)
 				{
@@ -242,8 +236,6 @@ void dijkstraAlgorithmProgram()
 				system("cls");
 				#endif // CLEAN_SCREEN
 
-				Timer timer;
-
 				int startNode;
 				int endNode;
 				int weigth;
@@ -263,13 +255,7 @@ void dijkstraAlgorithmProgram()
 
 				cin >> endNode;
 
-				timer.start();
-
 				weigth = graph->dijkstrasAlgorithmListOfSuccessors(startNode, endNode);
-
-				auto time_span = timer.stop();
-
-				message += " Algorytm wykonano w czsie: " + std::to_string(time_span.count()) + "\n\n";;
 
 				if (weigth != -1)
 				{
@@ -477,8 +463,6 @@ void primAlgorithmProgram()
 
 				std::string *sourceOfTree = nullptr;
 
-				Timer timer;
-
 				int startNode;
 
 				if (graph == nullptr)
@@ -492,13 +476,7 @@ void primAlgorithmProgram()
 
 				cin >> startNode;
 
-				timer.start();
-
 				graph->primsAlgorithmUsingIncydenceMatrix(sourceOfTree, startNode);
-
-				auto time_span = timer.stop();
-
-				message += " Algorytm wykonano w czsie: " + std::to_string(time_span.count()) + "\n\n";;
 
 				if (minTree != nullptr)
 				{
@@ -521,8 +499,6 @@ void primAlgorithmProgram()
 
 				std::string *sourceOfTree = nullptr;
 
-				Timer timer;
-
 				int startNode;
 
 				if (graph == nullptr)
@@ -545,13 +521,7 @@ void primAlgorithmProgram()
 					minTree = nullptr;
 				}
 
-				timer.start();
-
 				graph->primsAlgorithmUsingListOfSuccessors(sourceOfTree, UNDIRECTED_GRAPH);
-
-				auto time_span = timer.stop();
-
-				message += " Algorytm wykonano w czsie: " + std::to_string(time_span.count()) + "\n\n";;
 
 				break;
 			}

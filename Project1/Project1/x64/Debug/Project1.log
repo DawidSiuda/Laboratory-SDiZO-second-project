@@ -1,0 +1,4 @@
+﻿  main.cpp
+c:\users\admin\documents\github\laboratory-sdizo-second-project\project1\project1\functions.h(31): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  Project1.vcxproj -> C:\Users\admin\Documents\GitHub\Laboratory-SDiZO-second-project\Project1\x64\Debug\Project1.exe
+  Project1.vcxproj -> C:\Users\admin\Documents\GitHub\Laboratory-SDiZO-second-project\Project1\x64\Debug\Project1.pdb (Partial PDB)
